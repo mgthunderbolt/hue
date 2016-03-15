@@ -81,7 +81,6 @@ class LastActivityMiddleware(object):
     logout = False
 
     if profile.last_activity and expires_after > 0 and self._total_seconds(now - profile.last_activity) > expires_after:
-      messages.info(request, _('Your session has been timed out due to inactivity.'))
       logout = True
 
     # Save last activity for user except when polling jobbrowser

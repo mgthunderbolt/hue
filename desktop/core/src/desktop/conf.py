@@ -640,10 +640,6 @@ CUSTOM = ConfigSection(
                    default=86400000,
                    type=int,
                    help=_("The cache TTL in milliseconds for the assist/autocomplete/etc calls. Set to 0 it disables the cache.")),
-    IDLE_LOGOUT_TIME=Config("idle_logout_time",
-                   default=86400000,
-                   type=int,
-                   help=_("Timeout in milliseconds for logging out the user automatically after inactivity.")),
 ))
 
 AUTH = ConfigSection(

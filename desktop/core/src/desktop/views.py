@@ -420,6 +420,9 @@ def commonimportexport(request):
 def login_modal(request):
   return desktop.auth.views.dt_login(request, True)
 
+def ping(request):
+  return HttpResponse("pong")
+
 def commonfooter(request, messages=None):
   """
   Returns the rendered common footer

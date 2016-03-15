@@ -232,19 +232,21 @@ if USE_NEW_EDITOR.get():
         top.location = self.location;
       }
 
+      %if conf.AUTH.IDLE_SESSION_TIMEOUT.get() > -1:
       var idleTimer;
       function resetIdleTimer() {
         clearTimeout(idleTimer);
         idleTimer = setTimeout(function () {
-          // logout the user when idle for more than conf.CUSTOM.IDLE_LOGOUT_TIME
-          $.get('/accounts/logout/');
-        }, ${conf.CUSTOM.IDLE_LOGOUT_TIME.get()});
+          // logout the user when idle for more than conf.AUTH.IDLE_SESSION_TIMEOUT by calling 'ping'
+          $.get('/ping');
+        }, (${conf.AUTH.IDLE_SESSION_TIMEOUT.get()} * 1000) + 1000);
       }
 
       $(document).on('mousemove', resetIdleTimer);
       $(document).on('keydown', resetIdleTimer);
       $(document).on('click', resetIdleTimer);
       resetIdleTimer();
+      %endif
 
       $("input, textarea").placeholder();
       $(".submitter").keydown(function (e) {
