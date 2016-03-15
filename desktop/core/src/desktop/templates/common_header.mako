@@ -232,6 +232,20 @@ if USE_NEW_EDITOR.get():
         top.location = self.location;
       }
 
+      var idleTimer;
+      function resetIdleTimer() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(function () {
+          // logout the user when idle for more than conf.CUSTOM.IDLE_LOGOUT_TIME
+          $.get('/accounts/logout/');
+        }, ${conf.CUSTOM.IDLE_LOGOUT_TIME.get()});
+      }
+
+      $(document).on('mousemove', resetIdleTimer);
+      $(document).on('keydown', resetIdleTimer);
+      $(document).on('click', resetIdleTimer);
+      resetIdleTimer();
+
       $("input, textarea").placeholder();
       $(".submitter").keydown(function (e) {
         if (e.keyCode == 13) {

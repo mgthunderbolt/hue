@@ -54,6 +54,7 @@ ${ smart_unicode(login_modal(request).content) | n,unicode }
     $(document).ajaxSuccess(function (event, xhr, settings, data) {
       if (data === '/* login required */' && !isLoginRequired) {
         isLoginRequired = true;
+        $('body').children(':not(#login-modal)').addClass('blurred');
         $('#login-modal').modal('show');
         window.setTimeout(function () {
           $('.jHueNotify').remove();
@@ -63,6 +64,7 @@ ${ smart_unicode(login_modal(request).content) | n,unicode }
 
     $('#login-modal').on('hidden', function () {
       isLoginRequired = false;
+      $('body').children(':not(#login-modal)').removeClass('blurred');
     });
 
     huePubSub.subscribe('hue.login.result', function (response) {
