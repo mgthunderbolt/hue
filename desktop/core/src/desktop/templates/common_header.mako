@@ -204,6 +204,9 @@ if USE_NEW_EDITOR.get():
   <script src="${ static('desktop/ext/js/fileuploader.js') }"></script>
   <script src="${ static('desktop/js/popover-extra-placements.js') }"></script>
 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/tomorrow.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+
   <script type="text/javascript" charset="utf-8">
 
     //Add CSRF Token to all XHR Requests
@@ -485,7 +488,7 @@ if USE_NEW_EDITOR.get():
     </span>
     </div>
 
-    <a class="brand nav-tooltip pull-left" title="${_('About Hue')}" rel="navigator-tooltip" href="/about">
+    <a class="brand nav-tooltip pull-left" title="${_('About Hue')}" rel="navigator-tooltip" href="/notebook/editor">
       <svg class="logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1184.06 218.11">
             <path d="M1002.48,57.55a123.44,123.44,0,0,0-32.71,4.36,84.34,84.34,0,0,0-14.08,5.24,21.26,21.26,0,0,0-18-9.6H915.23v167.2h43.61v-86.8c0-16.88,2.9-23.46,8.73-29.3s14.74-8.72,26.8-8.72h18.81V57.55h-10.72" transform="translate(-18.8 -8.14)"></path>
             <path d="M206.23,8.14H183.79v196A19.42,19.42,0,0,0,190,218.82a21,21,0,0,0,15,5.93h22.44v-196a19.45,19.45,0,0,0-6.23-14.64,21,21,0,0,0-15-5.92" transform="translate(-18.8 -8.14)"></path>

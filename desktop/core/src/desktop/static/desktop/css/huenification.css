@@ -142,3 +142,17 @@ body {
 .sidebar-nav a {
   font-size: 15px;
 }
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: #F6F6F6;
+}
+
+code {
+  border: none;
+}
+
+.currentApp a img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

@@ -3536,4 +3536,12 @@
     }
   };
 
+  ko.bindingHandlers.highlightedCode = {
+    update: function(element, valueAccessor){
+        var code = ko.unwrap(valueAccessor());
+        element.innerText = code;
+        hljs.highlightBlock(element);
+    }
+  };
+
 }));

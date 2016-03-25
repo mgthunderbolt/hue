@@ -462,7 +462,7 @@ ${ require.config() }
                 <td style="width: 25px" class="muted" data-bind="style:{'border-top-width': $index()==0 ? '0' : ''}">
                   <i class="fa fa-bolt inactive-action" data-bind="css: {'fa-fighter-jet': status == 'running', 'fa-cloud-download': status == 'available'}, attr: {'title': status}"></i>
                 </td>
-                <td data-bind="style:{'border-top-width': $index()==0 ? '0' : ''}"><code data-bind="text: query" style="white-space: normal"></code></td>
+                <td data-bind="style:{'border-top-width': $index()==0 ? '0' : ''}"><code class="sql" data-bind="highlightedCode: query" style="white-space: normal"></code></td>
               </tr>
             </tbody>
           </table>
