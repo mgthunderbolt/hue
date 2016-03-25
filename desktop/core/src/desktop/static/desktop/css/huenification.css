@@ -1,0 +1,144 @@
+/*
+ Licensed to Cloudera, Inc. under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  Cloudera, Inc. licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navigator {
+  background-color: #222C33;
+  height: 50px;
+}
+
+.navbar-fixed-top {
+  top: 50px;
+}
+
+.main-content {
+  top: 100px!important;
+}
+
+.logo {
+  height: 22px!important;
+  width: auto!important;
+  fill: #FFF;
+  margin-top: 8px;
+}
+
+.navigator .nav-pills > li > a {
+  color:#b8c6cf;
+  padding-top: 15px;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.nav-pills>li>a, .nav-pills>li>a:hover{
+  border-bottom: none;
+}
+
+
+.hamburger {
+  padding: 12px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: color, -webkit-filter;
+  transition-property: color, filter;
+  transition-property: color, filter, -webkit-filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  margin-left: 14px;
+  overflow: visible;
+}
+
+.hamburger {
+  color: #b8c6cf;
+}
+
+.hamburger:hover {
+  color: #FFF;
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 1px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 24px;
+  height: 3px;
+  background-color: currentcolor;
+  position: absolute;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+/*
+ * Arrow
+ */
+.hamburger--arrow.is-active .hamburger-inner::before {
+  -webkit-transform: translate3d(-7px, 3px, 0) rotate(-45deg) scale(0.7, 1);
+  transform: translate3d(-7px, 3px, 0) rotate(-45deg) scale(0.7, 1);
+}
+
+.hamburger--arrow.is-active .hamburger-inner::after {
+  -webkit-transform: translate3d(-7px, -3px, 0) rotate(45deg) scale(0.7, 1);
+  transform: translate3d(-7px, -3px, 0) rotate(45deg) scale(0.7, 1);
+}
+
+
+.sidebar-icon {
+  font-size: 30px;
+  fill: currentcolor;
+  vertical-align: middle;
+  height: 1em;
+  width: 1em;
+  margin-right: 10px;
+}
+
+.sidebar-nav a {
+  font-size: 15px;
+}
